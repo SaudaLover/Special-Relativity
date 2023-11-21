@@ -1,0 +1,4 @@
+
+print "In this simulation, Super Einstein is flying through space with his twin brother Murray, who is 186,000 miles behind him. Every time he wants to make an acceleration of 10 mph, he uses a flashlight to signal his brother so that they will accelerate together and stay the same distance apart."
+A = raw_input("Please type the speed of the brothers")
+Brothers = int(A)
