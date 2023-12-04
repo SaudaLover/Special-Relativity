@@ -1,8 +1,9 @@
 import pygame, sys
+import formulas
 
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self, pos_x, pos_y) -> None:
+    def __init__(self, pos_x, pos_y, speed = 0) -> None:
         super().__init__()
         self.images = []
         self.images.append(pygame.image.load('images/download.jpg'))
@@ -16,23 +17,27 @@ class Player(pygame.sprite.Sprite):
 
         self.is_animating = False
 
-    def update(self):
+        self.speed = speed
+
+    def update(self, speed):
         if self.is_animating == True:
 
-            self.current_image += 0.1
-            try:
-                if self.current_image >= len(self.images):
-                    self.current_image = 0
-                    self.is_animating = False
-
-                self.image = self.images[int(self.current_image)]
-            except:
+            self.current_image += speed
+            if self.current_image >= len(self.images):
+                self.current_image = 0
+                self.is_animating = False
+                self.speed = 0
                 
+
+            self.image = self.images[int(self.current_image)]
+            
 
     def animate(self):
         self.is_animating = True
 
+
 def main():
+
     pygame.init()
     clock = pygame.time.Clock
 
@@ -46,20 +51,36 @@ def main():
     moving_sprites.add(player)
 
     clock = pygame.time.Clock()
-    
     while True:
+        vel = float(input("What Factor of the speed of light do you want to go at?: "))
+        if vel > 0 and vel < 1:
+            break
+        else:
+            print("Put it inbetween 0 and 1 please")
+    
+    print("Values")
+    print("Shrinking Value: ", formulas.shrink_factor(vel))
+    print("Length Contraction: ", formulas.length_contraction(vel))
+    print("Time Dilation: ", formulas.time_dilation(vel))
+
+    while True:
+  
+        
         clock.tick((60))
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                player.animate()
+                if event.key == pygame.K_LEFT:
+                    player.animate()
+                    player.speed = vel/75
 
         screen.fill((0, 0, 0))
         moving_sprites.draw(screen)
         pygame.display.flip()
-        moving_sprites.update()
+        player.update(player.speed)
+    
         
 
 
