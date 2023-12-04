@@ -53,6 +53,7 @@ def main():
     clock = pygame.time.Clock()
     while True:
         vel = float(input("What Factor of the speed of light do you want to go at?: "))
+        length = float(input("What is the height of our einsteins: "))
         if vel > 0 and vel < 1:
             break
         else:
@@ -62,6 +63,7 @@ def main():
     print("Shrinking Value: ", formulas.shrink_factor(vel))
     print("Length Contraction: ", formulas.length_contraction(vel))
     print("Time Dilation: ", formulas.time_dilation(vel))
+    print("EInstein height contraction: ", formulas.length_einstein_contraction(vel, length))
 
     while True:
   
@@ -74,7 +76,7 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
                     player.animate()
-                    player.speed = vel/75
+                    player.speed = vel/25
 
         screen.fill((0, 0, 0))
         moving_sprites.draw(screen)

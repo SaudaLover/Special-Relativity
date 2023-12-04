@@ -8,7 +8,10 @@ def length_contraction(vel):
     return (100000 * shrink_factor(vel))
 
 def time_dilation(vel):
-    return shrink_factor(vel)
+    return (100000/299792458) * shrink_factor(vel)
+
+def length_einstein_contraction(vel, length):
+    return length * shrink_factor(vel)
 
 def main():
     # print(shrink_factor(0.99))
