@@ -82,12 +82,6 @@ def main():
         moving_sprites.draw(screen)
         pygame.display.flip()
         player.update(player.speed)
-    
-        
-
-
-
-
 
 main()
 
