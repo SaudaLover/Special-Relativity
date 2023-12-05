@@ -59,7 +59,7 @@ def main():
         else:
             print("Put it inbetween 0 and 1 please")
     
-    print("Values")
+    print("Values:")
     print("Shrinking Value: ", formulas.shrink_factor(vel))
     print("Length Contraction: ", formulas.length_contraction(vel))
     print("Time Dilation: ", formulas.time_dilation(vel))
