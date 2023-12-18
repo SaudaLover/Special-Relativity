@@ -6,10 +6,8 @@ import formulas
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos_x, pos_y, speed = 0) -> None:
         super().__init__()
-        self.images = []
-        self.images.append(pygame.image.load('images/download.jpg'))
-        self.images.append(pygame.image.load('images/download (1).jpg'))  
-        self.images.append(pygame.image.load('images/download (2).jpg'))     
+        self.images = [] 
+        self.images.append(pygame.image.load('images\\first_simul\MINI MAN 1\\1.jpg'))
         self.current_image = 0
         self.image = self.images[self.current_image]
 
@@ -25,7 +23,7 @@ class Player(pygame.sprite.Sprite):
 
             self.current_image += speed
             if self.current_image >= len(self.images):
-                self.current_image = 0
+                self.current_image = -1
                 self.is_animating = False
                 self.speed = 0
                 
@@ -63,22 +61,22 @@ def main():
             break
         else:
             print("Put it inbetween 0 and 1 please")
-    # lst_of_photos = []
+    lst_of_photos = []
     print("Values:")
     print("Shrinking Value: ", formulas.shrink_factor(vel))
     print("Length Contraction: ", formulas.length_contraction(vel))
     print("Time Dilation: ", formulas.time_dilation(vel))
     print("EInstein height contraction: ", formulas.length_einstein_contraction(vel, length))
-    # if vel <= 0.99 and vel > 0.5:
-    #     lst_of_photos = []
-    #     player.speed = vel/25
-    # if vel <= 0.55 and vel > 0.1:
-    #     lst_of_photos = []
-    #     player.speed = vel/15
-    # if vel <=0.1:
-    #     lst_of_photos = []
-    #     player.speed = vel
-    # player.load(lst_of_photos)
+    if vel <= 0.99 and vel > 0.5:
+        lst_of_photos = ['images\\first_simul\MINI MAN 1\\2.jpg','images\\first_simul\MINI MAN 1\\3.jpg','images\\first_simul\MINI MAN 1\\4.jpg','images\\first_simul\MINI MAN 1\\5.jpg','images\\first_simul\MINI MAN 1\\6.jpg','images\\first_simul\MINI MAN 1\\7.jpg','images\\first_simul\MINI MAN 1\\8.jpg','images\\first_simul\MINI MAN 1\\9.jpg','images\\first_simul\MINI MAN 1\\10.jpg','images\\first_simul\MINI MAN 1\\11.jpg','images\\first_simul\MINI MAN 1\\12.jpg','images\\first_simul\MINI MAN 1\\13.jpg','images\\first_simul\MINI MAN 1\\14.jpg',]
+        player.speed = vel/25
+    if vel <= 0.55 and vel > 0.1:
+        lst_of_photos = []
+        player.speed = vel/15
+    if vel <=0.1:
+        lst_of_photos = []
+        player.speed = vel
+    player.load(lst_of_photos)
 
 
     while True:
