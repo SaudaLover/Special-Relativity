@@ -81,10 +81,10 @@ def main():
 
 
     while True:
-
         
-        clock.tick((60))
-        for event in pygame.event.get():
+        clock.tick(60)
+        events = pygame.event.get()
+        for event in events:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
