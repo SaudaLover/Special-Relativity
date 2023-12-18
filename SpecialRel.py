@@ -37,6 +37,10 @@ class Player(pygame.sprite.Sprite):
         self.is_animating = True
 
 
+    def load(self, lst_of_photos):
+        for photo in lst_of_photos:
+            self.images.append(pygame.image.load(photo))
+
 def main():
 
     pygame.init()
@@ -59,15 +63,26 @@ def main():
             break
         else:
             print("Put it inbetween 0 and 1 please")
-    
+    # lst_of_photos = []
     print("Values:")
     print("Shrinking Value: ", formulas.shrink_factor(vel))
     print("Length Contraction: ", formulas.length_contraction(vel))
     print("Time Dilation: ", formulas.time_dilation(vel))
     print("EInstein height contraction: ", formulas.length_einstein_contraction(vel, length))
+    # if vel <= 0.99 and vel > 0.5:
+    #     lst_of_photos = []
+    #     player.speed = vel/25
+    # if vel <= 0.55 and vel > 0.1:
+    #     lst_of_photos = []
+    #     player.speed = vel/15
+    # if vel <=0.1:
+    #     lst_of_photos = []
+    #     player.speed = vel
+    # player.load(lst_of_photos)
+
 
     while True:
-  
+
         
         clock.tick((60))
         for event in pygame.event.get():
