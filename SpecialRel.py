@@ -58,8 +58,7 @@ def main():
         vel = float(input("What Factor of the speed of light do you want to go at?: "))
         length = float(input("What is the height of our einsteins: "))
         if vel > 0 and vel < 1:
-            if vel == 0.01:
-                break
+            break
         else:
             print("Put it inbetween 0 and 1 please")
     lst_of_photos = []
@@ -80,7 +79,7 @@ def main():
         player.speed = vel/15
     if vel <= 0.1:
         player.images.pop()
-        lst_of_photos = ['C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\1.jpg', 'C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\2.jpg','C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\3.jpg','C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\4.jpg','images\\third_simul\\5.jpg','images\\third_simul\\6.jpg','images\\third_simul\\7.jpg','images\\third_simul\\8.jpg','images\\third_simul\\9.jpg','images\\third_simul\\10.jpg','images\\third_simul\\11.jpg','images\\third_simul\\12.jpg','images\\third_simul\\13.jpg','images\\third_simul\\14.jpg']
+        lst_of_photos = ['images\\third_simul\\1.jpg', 'images\\third_simul\\2.jpg','images\\third_simul\\3.jpg','images\\third_simul\\4.jpg','images\\third_simul\\5.jpg','images\\third_simul\\6.jpg','images\\third_simul\\7.jpg','images\\third_simul\\8.jpg','images\\third_simul\\9.jpg','images\\third_simul\\10.jpg','images\\third_simul\\11.jpg','images\\third_simul\\12.jpg','images\\third_simul\\13.jpg','images\\third_simul\\14.jpg']
         player.speed = vel*1000
     player.load(lst_of_photos)
 
