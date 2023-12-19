@@ -58,7 +58,8 @@ def main():
         vel = float(input("What Factor of the speed of light do you want to go at?: "))
         length = float(input("What is the height of our einsteins: "))
         if vel > 0 and vel < 1:
-            break
+            if vel == 0.01:
+                break
         else:
             print("Put it inbetween 0 and 1 please")
     lst_of_photos = []
@@ -67,18 +68,20 @@ def main():
     print("Length Contraction: ", formulas.length_contraction(vel))
     print("Time Dilation: ", formulas.time_dilation(vel))
     print("EInstein height contraction: ", formulas.length_einstein_contraction(vel, length))
+    if vel == 0.01:
+        vel = 0.1
     if vel <= 0.99 and vel > 0.45:
         player.images.pop()
-        lst_of_photos = ['images\\first_simul\MINI MAN 1\\1(real).jpg', 'images\\first_simul\MINI MAN 1\\2.jpg','images\\first_simul\MINI MAN 1\\3.jpg','images\\first_simul\MINI MAN 1\\4.jpg','images\\first_simul\MINI MAN 1\\5.jpg','images\\first_simul\MINI MAN 1\\6.jpg','images\\first_simul\MINI MAN 1\\7.jpg','images\\first_simul\MINI MAN 1\\8.jpg','images\\first_simul\MINI MAN 1\\9.jpg','images\\first_simul\MINI MAN 1\\10.jpg','images\\first_simul\MINI MAN 1\\11.jpg','images\\first_simul\MINI MAN 1\\12.jpg','images\\first_simul\MINI MAN 1\\13.jpg','images\\first_simul\MINI MAN 1\\14.jpg',]
+        lst_of_photos = ['images\\first_simul\MINI MAN 1\\1(real).jpg', 'images\\first_simul\MINI MAN 1\\2.jpg','images\\first_simul\MINI MAN 1\\3.jpg','images\\first_simul\MINI MAN 1\\4.jpg','images\\first_simul\MINI MAN 1\\5.jpg','images\\first_simul\MINI MAN 1\\6.jpg','images\\first_simul\MINI MAN 1\\7.jpg','images\\first_simul\MINI MAN 1\\8.jpg','images\\first_simul\MINI MAN 1\\9.jpg','images\\first_simul\MINI MAN 1\\10.jpg','images\\first_simul\MINI MAN 1\\11.jpg','images\\first_simul\MINI MAN 1\\12.jpg','images\\first_simul\MINI MAN 1\\13.jpg','images\\first_simul\MINI MAN 1\\14.jpg']
         player.speed = vel/25
-    if vel <= 0.45 and vel > 0.01:
+    if vel <= 0.45 and vel > 0.1:
         player.images.pop()
         lst_of_photos = ['images\\second_simul\\mini man 2 (1).jpg', 'images\\second_simul\\mini_man_2(2).jpg', 'images\\second_simul\\mINI_mAN_2(3).jpg', 'images\\second_simul\\mini_man_2(4).jpg', 'images\\second_simul\\mini_man_2(5).jpg', 'images\\second_simul\\mini_man_2(6).jpg', 'images\\second_simul\\Mini_man_2(7).jpg', 'images\\second_simul\\mini_man_2(8).jpg', 'images\\second_simul\\mini_man_2(9).jpg', 'images\\second_simul\\mini_man_2(10).jpg', 'images\\second_simul\\mini_man_2(11).jpg', 'images\\second_simul\\mini_man_2(12).jpg', 'images\\second_simul\\MiniMan2(13).jpg', 'images\\second_simul\\miniman2(14).jpg']
         player.speed = vel/15
-    if vel <=0.01:
+    if vel <= 0.1:
         player.images.pop()
-        lst_of_photos = ['images\\third_simul\\1.jpg', 'images\\third_simul\\2.jpg','images\\third_simul\\3.jpg','images\\third_simul\\4.jpg','images\\third_simul\\5.jpg','images\\third_simul\\6.jpg','images\\third_simul\\7.jpg','images\\third_simul\\8.jpg','images\\third_simul\\9.jpg','images\\third_simul\\10.jpg','images\\third_simul\\11.jpg','images\\third_simul\\12.jpg','images\\third_simul\\13.jpg','images\\third_simul\\14.jpg',]
-        player.speed = vel*3
+        lst_of_photos = ['C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\1.jpg', 'C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\2.jpg','C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\3.jpg','C:\\practice_for_GCIS\\Special-Relativity\\images\\third_simul\\4.jpg','images\\third_simul\\5.jpg','images\\third_simul\\6.jpg','images\\third_simul\\7.jpg','images\\third_simul\\8.jpg','images\\third_simul\\9.jpg','images\\third_simul\\10.jpg','images\\third_simul\\11.jpg','images\\third_simul\\12.jpg','images\\third_simul\\13.jpg','images\\third_simul\\14.jpg']
+        player.speed = vel*1000
     player.load(lst_of_photos)
 
 
